@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lorem } from 'faker';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular_Typing_Validation_Challenge';
+  randomText = lorem.sentence();
+  enteredText ='';
+
+  onInput(value: string){
+    this.enteredText = value;
+
+    console.log(value);
+  }
+
 }

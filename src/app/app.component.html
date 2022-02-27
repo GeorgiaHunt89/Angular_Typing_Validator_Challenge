@@ -4,14 +4,14 @@
       <h1 class="title has-text-centered">Typing Validation Challenge</h1>
       
       <p class="has-text-centered">
-        Randomly generated text here
+        <span *ngFor="let letter of randomText.split(''); let i = index;">({{ letter }}{{enteredText[i]}})</span>
       </p>
 
       <div class="field">
-       <input class="input" />  
+        <input #userInput class="input" (input)="onInput(userInput.value)"/>
       </div>
 
-      <div class="box has-text-centered">
+      <div *ngIf="randomText === enteredText" class="box has-text-centered">
         <h1 class="title">Success!</h1>
       </div>
     </div>
